@@ -1,0 +1,37 @@
+How to start a website
+
+1. create project folder
+$ mkdir project
+
+2. navigate to project folder
+$ cd project
+
+3. copy Initializr template into project folder
+$ cp -a /home/kurtisromanchuk/Initializr/initializrxresponsive/. .
+
+4. start git project
+$ git init
+
+5. add initial project files to git
+$ git add .
+
+6. create new github repo online
+https://github.com/kurtisromanchuk/project
+
+5. set new github.com repo origin
+$ git remote add origin https://github.com/kurtisromanchuk/project
+
+6. create README.md file for github
+$ touch README.md
+
+7. open README.md and add description to appear below repo on github
+$ xdg-open README.md
+
+8. add README.md to git
+$ git add .
+
+9. commit initial setup to git
+$ git commit -m "Initial project setup"
+
+10. save project to master branch on github
+$ git push origin master
