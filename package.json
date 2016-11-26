@@ -1,0 +1,31 @@
+{
+  "name": "test_site",
+  "version": "1.0.0",
+  "description": "a test site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurtisromanchuk/test_site.git"
+  },
+  "keywords": [
+    "test",
+    "site"
+  ],
+  "author": "kurtisromanchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurtisromanchuk/test_site/issues"
+  },
+  "homepage": "https://github.com/kurtisromanchuk/test_site#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2"
+  }
+}

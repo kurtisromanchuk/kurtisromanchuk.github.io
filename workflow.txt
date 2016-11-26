@@ -34,4 +34,28 @@ $ git add .
 $ git commit -m "Initial project setup"
 
 10. save project to master branch on github
-$ git push origin master
+$ git push -u origin master
+
+~~ gulp tutorial from https://css-tricks.com/gulp-for-beginners/ ~~
+
+11. initialize node packet manager within the project
+$ npm init
+
+12. install gulp into the project
+$ npm install gulp --save-dev
+
+13. install sass into the project
+$ npm install gulp-sass --save-dev
+
+14. install browser sync into the project
+$ npm install browser-sync --save-dev
+
+15. install gulp useref into the project
+$ npm install gulp-useref --save-dev
+
+16. install gulp uglify into the project
+$ npm install gulp-uglify
+
+17. install gulp if into the project
+$ npm install gulp-if
+
