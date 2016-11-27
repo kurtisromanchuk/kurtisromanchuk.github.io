@@ -13,6 +13,14 @@ var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 // Requires the gulp css nano plugin
 var cssnano = require('gulp-cssnano');
+// Requires the gulp imagemin plugin
+var imagemin = require('gulp-imagemin');
+// Requires the gulp cache plugin
+var cache = require('gulp-cache');
+// Requires the del plugin
+var del = require('del');
+// Requires the run sequence plugin
+var runSequence = require('run-sequence');
 
 
 // Creates function to convert sass to css
@@ -25,24 +33,29 @@ gulp.task('sass', function(){
 		}))
 });
 
-// Browser Sync
+// creates a broswerSync task to create a local server with Browser Sync
 gulp.task('browserSync', function(){
 	browserSync.init({
 		server: {
 			baseDir: '.'
 		},
 	})
-})
+});
 
-// Watch task
-gulp.task('watch', ['browserSync', 'sass'], function(){
+// Creates a watch task to update saved files
+gulp.task('watch', function(){
 	// Automatically update scss files to css
 	gulp.watch('scss/**/*.scss', ['sass']);
 	// Reload browser whenever html, css, or js files change
 	gulp.watch('*.html', browserSync.reload);
 	gulp.watch('css/*.css', browserSync.reload);
 	gulp.watch('js/*.js', browserSync.reload);
-})
+});
+
+// Creates a serve task to convert sass to css, build a local server, and watch for updates
+gulp.task('serve', function(callback){
+	runSequence('sass','browserSync','watch',callback);
+});
 
 // Creates useref task to build javascript libraries at end of html file into correct order
 gulp.task('useref', function(){
@@ -56,3 +69,32 @@ gulp.task('useref', function(){
 		.pipe(gulp.dest('docs'))
 });
 
+// Creates an images task to optimize images
+gulp.task('images', function(){
+	return gulp.src('app.images/**/*/*(png|tiff|jpg|jpeg|gif|svg)')
+	// Caching images that run through imagemin
+	.pipe(cache(imagemin({
+		// Setting interlaced to true to make interlaced gifs
+		interlaced: true
+	})))
+	// Outputs results to distribution folder for github pages
+	.pipe(gulp.dest('docs/images'))
+});
+
+// Creates a fonts task to copy fonts, no optimization needed
+gulp.task('fonts', function(){
+	return gulp.src('app/fonts/**/*')
+	// Outputs results to distribution folder for github pages
+	.pipe(gulp.dest('docs/fonts'))
+});
+
+// Creates a clean:docs function to clean the github pages distribution folder of old uncached build files
+gulp.task('clean:docs', function(){
+	return del.sync('docs');
+});
+
+// Creates a build task to run all tasks to optimize and/or copy files
+gulp.task('build', function(callback){
+	runSequence('clean:docs','sass',['useref','images','fonts'],callback);
+	console.log('Building files');
+});

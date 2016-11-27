@@ -61,3 +61,16 @@ $ npm install gulp-if
 
 18. install gulp cssnano into the project
 $ npm install gulp-cssnano --save-dev
+
+19. install gulp image minifier to the project
+$ npm install gulp-imagemin --save-dev
+
+20. install gulp cache to the project
+$ npm install gulp-cache --save-dev
+
+21. install file cleanup to the project
+$ npm install del --save-dev
+
+22. install run sequence to the project
+$ npm install run-sequence --save-dev
+
