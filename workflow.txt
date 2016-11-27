@@ -59,3 +59,5 @@ $ npm install gulp-uglify
 17. install gulp if into the project
 $ npm install gulp-if
 
+18. install gulp cssnano into the project
+$ npm install gulp-cssnano --save-dev

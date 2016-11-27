@@ -11,6 +11,9 @@ var useref = require('gulp-useref');
 // Requirements for minifying javascript
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
+// Requires the gulp css nano plugin
+var cssnano = require('gulp-cssnano');
+
 
 // Creates function to convert sass to css
 gulp.task('sass', function(){
@@ -47,6 +50,9 @@ gulp.task('useref', function(){
 		.pipe(useref())
 		// Minifies only if it's a Javascript file
 		.pipe(gulpIf('*.js', uglify()))
-		.pipe(gulp.dest('dist'))
+		// Minifies only if it's a CSS file
+		.pipe(gulpIf('*.css', cssnano()))
+		// Outputs results to distribution folder for github pages
+		.pipe(gulp.dest('docs'))
 });
 
