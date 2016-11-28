@@ -21,12 +21,19 @@ var cache = require('gulp-cache');
 var del = require('del');
 // Requires the run sequence plugin
 var runSequence = require('run-sequence');
+// Requires the gulp autoprefixer plugin
+var autoprefixer = require('gulp-autoprefixer');
 
 
 // Creates function to convert sass to css
 gulp.task('sass', function(){
 	return gulp.src('scss/**/*.scss')
 		.pipe(sass()) // Converts sass to css with gulp-sass
+		// auto-prefix css
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
 		.pipe(gulp.dest('css'))
 		.pipe(browserSync.reload({
 			stream: true
@@ -64,6 +71,11 @@ gulp.task('useref', function(){
 		// Minifies only if it's a Javascript file
 		.pipe(gulpIf('*.js', uglify()))
 		// Minifies only if it's a CSS file
+		// auto-prefix css
+		.pipe(gulpIf('*.css',autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		})))
 		.pipe(gulpIf('*.css', cssnano()))
 		// Outputs results to distribution folder for github pages
 		.pipe(gulp.dest('docs'))
