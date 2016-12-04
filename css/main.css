@@ -77,8 +77,14 @@ textarea {
 /* ==========================================================================
    Kurtis Romanchuk's custom styles
    ========================================================================== */
+/* Import variable styles */
+/*! Jade Greeen SCSS Variables File by Kurtis Romanchuk */
+/* Colours */
 /* Import layout styles */
-/* Jade Greeen SCSS Layout File by Kurtis Romanchuk */
+/*! Jade Greeen SCSS Layout File by Kurtis Romanchuk */
+html {
+  background-color: #00A86B; }
+
 .jadegreen-layout-pagecontainer {
   max-width: 1200px; }
 

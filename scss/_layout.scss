@@ -1,4 +1,8 @@
-/* Jade Greeen SCSS Layout File by Kurtis Romanchuk */
+/*! Jade Greeen SCSS Layout File by Kurtis Romanchuk */
+
+html {
+	background-color: $primary-color;
+}
 
 .jadegreen-layout-pagecontainer {
 	max-width: 1200px;
