@@ -83,14 +83,14 @@ gulp.task('useref', function(){
 
 // Creates an images task to optimize images
 gulp.task('images', function(){
-	return gulp.src('app.images/**/*/*(png|tiff|jpg|jpeg|gif|svg)')
+	return gulp.src('img/**/*')
 	// Caching images that run through imagemin
 	.pipe(cache(imagemin({
 		// Setting interlaced to true to make interlaced gifs
 		interlaced: true
 	})))
 	// Outputs results to distribution folder for github pages
-	.pipe(gulp.dest('docs/images'))
+	.pipe(gulp.dest('docs/img'))
 });
 
 // Creates a fonts task to copy fonts, no optimization needed
