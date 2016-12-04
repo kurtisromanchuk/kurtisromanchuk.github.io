@@ -167,7 +167,8 @@ html {
 .jadegreen-layout-navdropdown {
   position: absolute;
   z-index: 1;
-  box-shadow: low-shadow; }
+  box-shadow: low-shadow;
+  display: none; }
 
 .jadegreen-layout-pagecontainer {
   background-color: #E2FBF2;
