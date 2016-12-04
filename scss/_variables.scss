@@ -1,4 +1,33 @@
 /*! Jade Greeen SCSS Variables File by Kurtis Romanchuk */
 
-/* Colours */
-$primary-color: #00A86B;
+/* ==========================================================================
+   Colours
+   Based on 198 on paletton.com base hex 00AB6F
+   Complimentary yellow at 90 degrees
+   ========================================================================== */
+
+$primary-color: #07754F; /* our jade green */
+$primary-light: #07754F; /* lighter jade green for activated states */
+$secondary-color: #FFF800; /* our gold */
+$primary-lightgrey: #D5DDDA;
+$primary-mediumgrey: #3A3F3D;
+$primary-darkgrey: #252928;
+$primary-white: #E2FBF2;
+
+/* ==========================================================================
+   Shadows
+   ========================================================================== */
+
+$low-shadow: 0px, 1px, 3px, $primary-darkgrey; /* Low shadow for menu, nav bar, and floating items */
+$low-shadow-active: 0px, 3px, 6px, $primary-darkgrey; /* Raised low shadow for activated states */
+$high-shadow: 0px, 10px, 20px, $primary-darkgrey; /* High shadow for buttons and interactive elements */
+$low-shadow-active: 0px, 14px, 28px, $primary-darkgrey; /* Raised high shadow for activated states */
+
+/* ==========================================================================
+   Content Sizes
+   ========================================================================== */
+
+   $content-width: 1200px;
+   $breakpoint: 800px;
+   $pageheader-height: 4em;
+   $nav-height: 3em;

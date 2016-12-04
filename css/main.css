@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -79,13 +80,97 @@ textarea {
    ========================================================================== */
 /* Import variable styles */
 /*! Jade Greeen SCSS Variables File by Kurtis Romanchuk */
-/* Colours */
+/* ==========================================================================
+   Colours
+   Based on 198 on paletton.com base hex 00AB6F
+   Complimentary yellow at 90 degrees
+   ========================================================================== */
+/* our jade green */
+/* lighter jade green for activated states */
+/* our gold */
+/* ==========================================================================
+   Shadows
+   ========================================================================== */
+/* Low shadow for menu, nav bar, and floating items */
+/* Raised low shadow for activated states */
+/* High shadow for buttons and interactive elements */
+/* Raised high shadow for activated states */
+/* ==========================================================================
+   Content Sizes
+   ========================================================================== */
 /* Import layout styles */
 /*! Jade Greeen SCSS Layout File by Kurtis Romanchuk */
+/* ==========================================================================
+   Page Colouring
+   ========================================================================== */
 html {
-  background-color: #00A86B; }
+  color: #3A3F3D;
+  background-color: #D5DDDA; }
+
+/* ==========================================================================
+   Text Styling
+   ========================================================================== */
+/* ==========================================================================
+   Page Layout Framework (mobile first)
+   ========================================================================== */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.jadegreen-layout-pageheader {
+  background: #07754F;
+  width: 100%;
+  height: 4em;
+  display: table; }
+  .jadegreen-layout-pageheader h1 {
+    color: #E2FBF2;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase; }
+
+.jadegreen-layout-nav {
+  float: right; }
+  .jadegreen-layout-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .jadegreen-layout-nav ul li {
+      float: left;
+      position: relative; }
+      .jadegreen-layout-nav ul li a {
+        display: block;
+        padding: 0 20px;
+        display: inline-block;
+        line-height: 3em;
+        background: #E2FBF2;
+        color: #07754F;
+        box-shadow: 0px, 1px, 3px, #252928;
+        text-transform: uppercase;
+        text-decoration: none; }
+        .jadegreen-layout-nav ul li a:hover {
+          background: #07754F;
+          color: #FFF800;
+          box-shadow: 0px, 14px, 28px, #252928; }
+        .jadegreen-layout-nav ul li a:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾'; }
+      .jadegreen-layout-nav ul li ul li {
+        min-width: 250px; }
+        .jadegreen-layout-nav ul li ul li a {
+          paddding: 15px;
+          line-height: 3em; }
+
+.jadegreen-layout-navdropdown {
+  position: absolute;
+  z-index: 1;
+  box-shadow: low-shadow; }
 
 .jadegreen-layout-pagecontainer {
+  background-color: #E2FBF2;
   max-width: 1200px; }
 
 /* ==========================================================================
