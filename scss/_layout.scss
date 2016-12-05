@@ -60,14 +60,21 @@ html {
 // Branding for navigational bar
 .jadegreen-layout-navbrand {
 	float: left;
-	color: $primary-white;
-	display: inline-block;
-	line-height: $nav-height;
-	text-transform: uppercase;
-	&:hover {
-		background: $primary-light;
-		color: $secondary-color;
-		box-shadow: $low-shadow-active;
+	a {
+		background: $primary-color;
+		color: $primary-white;
+		display: inline-block;
+		padding: 0 20px;
+		line-height: $nav-height;
+		text-transform: uppercase;
+		font-weight: bold;
+		box-shadow: $low-shadow;
+		text-decoration: none;
+		&:hover {
+			background: $primary-light;
+			color: $secondary-color;
+			box-shadow: $low-shadow-active;
+		}
 	}
 }
 
@@ -82,11 +89,11 @@ html {
 			float: left;
 			position: relative;
 			a {
-				padding: 0 20px;
-				display: inline-block;
-				line-height: $nav-height;
 				background: $primary-color;
 				color: $primary-white;
+				display: inline-block;
+				padding: 0 20px;
+				line-height: $nav-height;
 				box-shadow: $low-shadow;
 				text-decoration: none;
 				&:hover {

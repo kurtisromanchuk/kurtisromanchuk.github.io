@@ -136,15 +136,21 @@ html {
   margin: 0 auto; }
 
 .jadegreen-layout-navbrand {
-  float: left;
-  color: white;
-  display: inline-block;
-  line-height: 50px;
-  text-transform: uppercase; }
-  .jadegreen-layout-navbrand:hover {
-    background: #00AB6F;
-    color: #FFF800;
-    box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
+  float: left; }
+  .jadegreen-layout-navbrand a {
+    background: #07754F;
+    color: white;
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
+    text-decoration: none; }
+    .jadegreen-layout-navbrand a:hover {
+      background: #00AB6F;
+      color: #FFF800;
+      box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
 
 .jadegreen-layout-navmenu {
   float: right; }
@@ -156,11 +162,11 @@ html {
       float: left;
       position: relative; }
       .jadegreen-layout-navmenu ul li a {
-        padding: 0 20px;
-        display: inline-block;
-        line-height: 50px;
         background: #07754F;
         color: white;
+        display: inline-block;
+        padding: 0 20px;
+        line-height: 50px;
         box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
         text-decoration: none; }
         .jadegreen-layout-navmenu ul li a:hover {
