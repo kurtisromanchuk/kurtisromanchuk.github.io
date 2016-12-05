@@ -32,21 +32,47 @@ html {
 }
 
 .jadegreen-layout-pageheader {
-	background: $primary-color;
+	background: $primary-white;
 	width: 100%;
 	height: $pageheader-height;
 	display: table;
-	h1 {
-		color: $primary-white;
-		display: table-cell;
-		vertical-align: middle;
-		font-size: 2em;
-		text-align: center;
-		text-transform: uppercase;
+	img {
+		display: block;
+		height: $pageheader-height;
+		width: auto;
+		margin: 0 auto;
 	}
 }
 
-.jadegreen-layout-nav {
+// Background for the navigational bar
+.jadegreen-layout-navbackground {
+	height: $nav-height;
+	background: $primary-color;
+	box-shadow: $low-shadow-active;
+}
+
+// Container for navigational bar
+.jadegreen-layout-navcontainer {
+	max-width: $content-width;
+	margin: 0 auto;
+}
+
+// Branding for navigational bar
+.jadegreen-layout-navbrand {
+	float: left;
+	color: $primary-white;
+	display: inline-block;
+	line-height: $nav-height;
+	text-transform: uppercase;
+	&:hover {
+		background: $primary-light;
+		color: $secondary-color;
+		box-shadow: $low-shadow-active;
+	}
+}
+
+// Navigational menu styling
+.jadegreen-layout-navmenu {
 	float: right;
 	ul {
 		list-style: none;
@@ -56,36 +82,36 @@ html {
 			float: left;
 			position: relative;
 			a {
-				display: block;
 				padding: 0 20px;
 				display: inline-block;
 				line-height: $nav-height;
-				background: $primary-white;
-				color: $primary-color;
+				background: $primary-color;
+				color: $primary-white;
 				box-shadow: $low-shadow;
-				text-transform: uppercase;
 				text-decoration: none;
 				&:hover {
-					background: $primary-color;
+					background: $primary-light;
 					color: $secondary-color;
 					box-shadow: $low-shadow-active;
 				}
+				// Below targets menu items that have dropdown with them
 				&:not(:only-child):after {
 					padding-left: 4px;
 					content: ' ▾';
 				}
 			}
 			ul li {
-				min-width: 250px;
 				a {
-					paddding: 15px;
-					line-height: $nav-height;
+					min-width: 180px;
+					paddding: 10px;
+					line-height: $nav-height/2;
 				}
 			}
 		}
 	}
 }
 
+// Dropdown meny styling
 .jadegreen-layout-navdropdown {
 	position: absolute;
 	z-index: 1;
@@ -93,8 +119,18 @@ html {
 	display: none;
 }
 
+// Page container styling
 .jadegreen-layout-pagecontainer {
 	background-color: $primary-white;
 	max-width: $content-width;
+	margin: 0 auto;
+	padding: 1em;
 }
 
+// Page footer styling
+.jadegreen-layout-footer {
+	max-width: $content-width;
+	margin: 0 auto;
+	padding: 1em;
+	text-align: center;
+}

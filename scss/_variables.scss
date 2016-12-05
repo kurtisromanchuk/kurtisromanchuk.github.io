@@ -7,21 +7,23 @@
    ========================================================================== */
 
 $primary-color: #07754F; /* our jade green */
-$primary-light: #07754F; /* lighter jade green for activated states */
+$primary-light: #00AB6F; /* lighter jade green for activated states */
 $secondary-color: #FFF800; /* our gold */
 $primary-lightgrey: #D5DDDA;
 $primary-mediumgrey: #3A3F3D;
 $primary-darkgrey: #252928;
-$primary-white: #E2FBF2;
+// $primary-white: #E2FBF2;
+$primary-white: white;
 
 /* ==========================================================================
    Shadows
    ========================================================================== */
 
-$low-shadow: 0px, 1px, 3px, $primary-darkgrey; /* Low shadow for menu, nav bar, and floating items */
-$low-shadow-active: 0px, 3px, 6px, $primary-darkgrey; /* Raised low shadow for activated states */
-$high-shadow: 0px, 10px, 20px, $primary-darkgrey; /* High shadow for buttons and interactive elements */
-$low-shadow-active: 0px, 14px, 28px, $primary-darkgrey; /* Raised high shadow for activated states */
+$very-low-shadow: 0px, 1px, 3px, black, 0px, 1px, 2px, $primary-darkgrey;
+$low-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, $primary-darkgrey;
+$low-shadow-active: 0px, 10px, 20px, black, 0px, 6px, 6px, $primary-darkgrey;
+$high-shadow: 0px, 14px, 28px, black, 0px, 10px, 10px, $primary-darkgrey;
+$high-shadow-active: 0px, 19px, 38px, black, 0px, 15px, 12px, $primary-darkgrey,;
 
 /* ==========================================================================
    Content Sizes
@@ -29,5 +31,5 @@ $low-shadow-active: 0px, 14px, 28px, $primary-darkgrey; /* Raised high shadow fo
 
    $content-width: 1200px;
    $breakpoint: 800px;
-   $pageheader-height: 4em;
-   $nav-height: 3em;
+   $pageheader-height: 200px;
+   $nav-height: 50px;
