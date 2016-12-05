@@ -31,7 +31,7 @@ html {
   box-sizing: inherit;
 }
 
-.jadegreen-layout-pageheader {
+/* .jadegreen-layout-pageheader {
 	background: $primary-white;
 	width: 100%;
 	height: $pageheader-height;
@@ -42,7 +42,7 @@ html {
 		width: auto;
 		margin: 0 auto;
 	}
-}
+} */
 
 // Background for the navigational bar
 .jadegreen-layout-navbackground {
@@ -124,6 +124,92 @@ html {
 	z-index: 1;
 	box-shadow: low-shadow;
 	display: none;
+}
+
+//Mobile navigation menu styling
+.jadegreen-layout-navmobile {
+	display: none;
+	float: right;
+	background: $primary-darkgrey;
+	height: $nav-height;
+	width: $nav-height;
+}
+
+@media only screen and (max-width: $breakpoint) {
+	.jadegreen-layout-navmobile {
+		display: block;
+	}
+
+	.jadegreen-layout-navmenu {
+    	width: 100%;
+	    padding: 0 0 15px;
+	    ul {
+	      	display: none;
+	      	li {
+	        	float: none;
+	        	a {
+	          		width: 100%;
+	          		padding: 15px;
+	          		line-height: 20px;
+	        	}
+	        	ul li a {
+	          		padding-left: 30px;
+	        	}
+	      	}
+	    }
+  	}
+
+  	.jadegreen-layout-navdropdown {
+    	position: static;
+  	}
+}
+
+@media screen and (min-width: $breakpoint) {
+  .jadegreen-layout-navmenu li {
+    display: block !important;
+  }
+}
+
+// Animated hamburger icon
+#jadegreen-layout-navtoggle {
+	position: absolute;
+	left: 18px;
+  	top: 22px;
+	float: right;
+	cursor: pointer;
+	padding: 32px 0px 0px 17px;
+	span,
+	span:before,
+	span:after {
+	    cursor: pointer;
+	    border-radius: 1px;
+	    height: 5px;
+	    width: 35px;
+	    background: $primary-white;
+	    position: absolute;
+	    display: block;
+	    content: '';
+	    transition: all 300ms ease-in-out;
+	  }
+	span:before {
+	  	top: -10px;
+	}
+	span:after {
+	  	bottom: -10px;
+	}
+	&.active span {
+	  	background-color: transparent;
+	  	&:before,
+	   	&:after {
+	    	top: 0;
+	    }
+	    &:before {
+	    	transform: rotate(45deg);
+	    }
+	    &:after {
+	    	transform: rotate(-45deg);
+	    }
+	}
 }
 
 // Page container styling
