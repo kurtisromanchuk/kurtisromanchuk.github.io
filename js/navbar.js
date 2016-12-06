@@ -11,13 +11,14 @@
     });
   });
 
-
-  $('#jadegreen-layout-navtoggle').on('click', function() {
-    this.classList.toggle('active');
+  $('.jadegreen-layout-navmobile').click(function() {
+    $('nav ul').toggle();
   });
 
-  $('#jadegreen-layout-navtoggle').click(function() {
-    $('nav ul').toggle();
+  var navtoggle = document.getElementById('jadegreen-layout-navtoggle')
+
+  $('.jadegreen-layout-navmobile').on('click', function() {
+    navtoggle.classList.toggle('active');
   });
 
 })(jQuery);

@@ -135,7 +135,7 @@ html {
 	display: none;
 }
 
-//Mobile navigation menu styling
+// Mobile navigation menu styling
 .jadegreen-layout-navmobile {
 	display: none;
 	position: absolute;
@@ -146,9 +146,27 @@ html {
 	width: $nav-height;
 }
 
+// Display mobile menu instead when screen becomes too narrow
 @media only screen and (max-width: $breakpoint) {
 	.jadegreen-layout-navmobile {
 		display: block;
+		&:hover {
+			background: $primary-light;
+			#jadegreen-layout-navtoggle {
+				span,
+				span:before,
+				span:after {
+					background: $secondary-color;
+				}
+				&.active span {
+	  				background-color: transparent;
+	  				&:before,
+	  				&:after {
+	  					//background-color: $primary-white;
+	  				}
+	  			}
+			}
+		}
 	}
 
 	.jadegreen-layout-navmenu {
@@ -185,10 +203,9 @@ html {
 #jadegreen-layout-navtoggle {
 	z-index: 1;
 	position: absolute;
-	left: 18px;
-  	top: 22px;
+	left: (($nav-height) - 35)/2;
+  	top: (($nav-height) - 5)/2;
 	cursor: pointer;
-	padding: 10px 35px 16px 2px;
 	span,
 	span:before,
 	span:after {
@@ -208,6 +225,7 @@ html {
 	span:after {
 	  	bottom: -10px;
 	}
+
 	&.active span {
 	  	background-color: transparent;
 	  	&:before,
@@ -223,12 +241,6 @@ html {
 	    	background: $secondary-color;
 	    }
 	}
-	/* Changes colour on hover, but seems to cause jank
-	span:hover,
-	span:hover:before,
-	span:hover:after {
-		background: $secondary-color;
-	} */
 }
 
 // Page container styling
