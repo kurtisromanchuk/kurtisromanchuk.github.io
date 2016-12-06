@@ -115,18 +115,17 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-/* .jadegreen-layout-pageheader {
-	background: $primary-white;
-	width: 100%;
-	height: $pageheader-height;
-	display: table;
-	img {
-		display: block;
-		height: $pageheader-height;
-		width: auto;
-		margin: 0 auto;
-	}
-} */
+.jadegreen-layout-pageheader {
+  background: white;
+  width: 100%;
+  height: 200px;
+  display: table; }
+  .jadegreen-layout-pageheader img {
+    display: block;
+    height: 200px;
+    width: auto;
+    margin: 0 auto; }
+
 .jadegreen-layout-navbackground {
   height: 70px;
   background: #07754F;
@@ -154,6 +153,7 @@ html {
       box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
 
 .jadegreen-layout-navmenu {
+  position: relative;
   float: right; }
   .jadegreen-layout-navmenu ul {
     list-style: none;
@@ -170,6 +170,8 @@ html {
         line-height: 70px;
         box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
         text-decoration: none; }
+        .jadegreen-layout-navmenu ul li a.jadegreen-layout.navcurrent {
+          background: #00AB6F; }
         .jadegreen-layout-navmenu ul li a:hover {
           background: #00AB6F;
           color: #FFF800;
@@ -182,16 +184,21 @@ html {
         paddding: 10px;
         line-height: 35px; }
 
+.jadegreen-layout-navcurrent {
+  background: #00AB6F; }
+
 .jadegreen-layout-navdropdown {
   position: absolute;
   z-index: 1;
-  box-shadow: low-shadow;
+  box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
   display: none; }
 
 .jadegreen-layout-navmobile {
   display: none;
-  float: right;
-  background: #252928;
+  position: absolute;
+  top: -70px;
+  right: 0;
+  background: #07754F;
   height: 70px;
   width: 70px; }
 
@@ -219,12 +226,18 @@ html {
     display: block !important; } }
 
 #jadegreen-layout-navtoggle {
+  z-index: 1;
   position: absolute;
   left: 18px;
   top: 22px;
-  float: right;
   cursor: pointer;
-  padding: 32px 0px 0px 17px; }
+  padding: 10px 35px 16px 2px;
+  /* Changes colour on hover, but seems to cause jank
+	span:hover,
+	span:hover:before,
+	span:hover:after {
+		background: $secondary-color;
+	} */ }
   #jadegreen-layout-navtoggle span,
   #jadegreen-layout-navtoggle span:before,
   #jadegreen-layout-navtoggle span:after {
@@ -246,9 +259,11 @@ html {
     #jadegreen-layout-navtoggle.active span:before, #jadegreen-layout-navtoggle.active span:after {
       top: 0; }
     #jadegreen-layout-navtoggle.active span:before {
-      transform: rotate(45deg); }
+      transform: rotate(45deg);
+      background: #FFF800; }
     #jadegreen-layout-navtoggle.active span:after {
-      transform: rotate(-45deg); }
+      transform: rotate(-45deg);
+      background: #FFF800; }
 
 .jadegreen-layout-pagecontainer {
   background-color: white;

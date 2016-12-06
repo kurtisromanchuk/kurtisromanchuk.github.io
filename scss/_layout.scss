@@ -31,7 +31,7 @@ html {
   box-sizing: inherit;
 }
 
-/* .jadegreen-layout-pageheader {
+.jadegreen-layout-pageheader {
 	background: $primary-white;
 	width: 100%;
 	height: $pageheader-height;
@@ -42,7 +42,7 @@ html {
 		width: auto;
 		margin: 0 auto;
 	}
-} */
+}
 
 // Background for the navigational bar
 .jadegreen-layout-navbackground {
@@ -80,6 +80,7 @@ html {
 
 // Navigational menu styling
 .jadegreen-layout-navmenu {
+	position: relative;
 	float: right;
 	ul {
 		list-style: none;
@@ -90,6 +91,9 @@ html {
 			position: relative;
 			a {
 				background: $primary-color;
+				&.jadegreen-layout.navcurrent {
+					background: $primary-light;
+				}
 				color: $primary-white;
 				display: inline-block;
 				padding: 0 20px;
@@ -118,19 +122,26 @@ html {
 	}
 }
 
+// Colour the current page manu item differently
+.jadegreen-layout-navcurrent {
+	background: $primary-light;
+}
+
 // Dropdown meny styling
 .jadegreen-layout-navdropdown {
 	position: absolute;
 	z-index: 1;
-	box-shadow: low-shadow;
+	box-shadow: $low-shadow;
 	display: none;
 }
 
 //Mobile navigation menu styling
 .jadegreen-layout-navmobile {
 	display: none;
-	float: right;
-	background: $primary-darkgrey;
+	position: absolute;
+	top: -$nav-height;
+	right: 0;
+	background: $primary-color;
 	height: $nav-height;
 	width: $nav-height;
 }
@@ -172,12 +183,12 @@ html {
 
 // Animated hamburger icon
 #jadegreen-layout-navtoggle {
+	z-index: 1;
 	position: absolute;
 	left: 18px;
   	top: 22px;
-	float: right;
 	cursor: pointer;
-	padding: 32px 0px 0px 17px;
+	padding: 10px 35px 16px 2px;
 	span,
 	span:before,
 	span:after {
@@ -205,11 +216,19 @@ html {
 	    }
 	    &:before {
 	    	transform: rotate(45deg);
+	    	background: $secondary-color;
 	    }
 	    &:after {
 	    	transform: rotate(-45deg);
+	    	background: $secondary-color;
 	    }
 	}
+	/* Changes colour on hover, but seems to cause jank
+	span:hover,
+	span:hover:before,
+	span:hover:after {
+		background: $secondary-color;
+	} */
 }
 
 // Page container styling
