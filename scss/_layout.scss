@@ -38,7 +38,7 @@ html {
 	display: table;
 	img {
 		display: block;
-		height: $pageheader-height;
+		height: ($pageheader-height)-5;
 		width: auto;
 		margin: 0 auto;
 	}
@@ -48,7 +48,8 @@ html {
 .jadegreen-layout-navbackground {
 	height: $nav-height;
 	background: $primary-color;
-	box-shadow: $low-shadow-active;
+	box-shadow: $low-shadow;
+	position: relative;
 }
 
 // Container for navigational bar
@@ -68,12 +69,10 @@ html {
 		line-height: $nav-height;
 		text-transform: uppercase;
 		font-weight: bold;
-		box-shadow: $low-shadow;
 		text-decoration: none;
 		&:hover {
-			background: $primary-light;
 			color: $secondary-color;
-			box-shadow: $low-shadow-active;
+			box-shadow: $low-shadow;
 		}
 	}
 }
@@ -91,14 +90,10 @@ html {
 			position: relative;
 			a {
 				background: $primary-color;
-				&.jadegreen-layout.navcurrent {
-					background: $primary-light;
-				}
 				color: $primary-white;
 				display: inline-block;
 				padding: 0 20px;
 				line-height: $nav-height;
-				box-shadow: $low-shadow;
 				text-decoration: none;
 				&:hover {
 					background: $primary-light;
@@ -123,7 +118,7 @@ html {
 }
 
 // Colour the current page manu item differently
-.jadegreen-layout-navcurrent {
+#jadegreen-layout-navcurrent {
 	background: $primary-light;
 }
 
@@ -132,6 +127,10 @@ html {
 	position: absolute;
 	z-index: 1;
 	box-shadow: $low-shadow;
+	background: $primary-light;
+	a {
+		background-color: $primary-light;
+	}
 	display: none;
 }
 
@@ -149,9 +148,9 @@ html {
 // Display mobile menu instead when screen becomes too narrow
 @media only screen and (max-width: $breakpoint) {
 	.jadegreen-layout-navmobile {
+		cursor: pointer; cursor: hand;
 		display: block;
 		&:hover {
-			background: $primary-light;
 			#jadegreen-layout-navtoggle {
 				span,
 				span:before,
@@ -160,10 +159,6 @@ html {
 				}
 				&.active span {
 	  				background-color: transparent;
-	  				&:before,
-	  				&:after {
-	  					//background-color: $primary-white;
-	  				}
 	  			}
 			}
 		}
@@ -190,11 +185,13 @@ html {
 
   	.jadegreen-layout-navdropdown {
     	position: static;
+    	background: $primary-color;
+    	box-shadow: $low-shadow;
   	}
 }
 
 @media screen and (min-width: $breakpoint) {
-  .jadegreen-layout-navmenu li {
+  .jadegreen-layout-navmenu {
     display: block !important;
   }
 }
@@ -253,8 +250,13 @@ html {
 
 // Page footer styling
 .jadegreen-layout-footer {
+	background-color: $primary-color;
+	box-shadow: $low-shadow;
 	max-width: $content-width;
 	margin: 0 auto;
 	padding: 1em;
 	text-align: center;
+	h3 {
+		color: $primary-white;
+	}
 }

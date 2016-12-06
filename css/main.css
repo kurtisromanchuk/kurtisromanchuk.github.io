@@ -122,14 +122,15 @@ html {
   display: table; }
   .jadegreen-layout-pageheader img {
     display: block;
-    height: 200px;
+    height: 195px;
     width: auto;
     margin: 0 auto; }
 
 .jadegreen-layout-navbackground {
   height: 50px;
   background: #07754F;
-  box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
+  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
+  position: relative; }
 
 .jadegreen-layout-navcontainer {
   max-width: 1200px;
@@ -145,12 +146,10 @@ html {
     line-height: 50px;
     text-transform: uppercase;
     font-weight: bold;
-    box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
     text-decoration: none; }
     .jadegreen-layout-navbrand a:hover {
-      background: #00AB6F;
       color: #FFF800;
-      box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
+      box-shadow: 0px 1px 3px black, 0px 1px 2px #252928; }
 
 .jadegreen-layout-navmenu {
   position: relative;
@@ -168,14 +167,11 @@ html {
         display: inline-block;
         padding: 0 20px;
         line-height: 50px;
-        box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
         text-decoration: none; }
-        .jadegreen-layout-navmenu ul li a.jadegreen-layout.navcurrent {
-          background: #00AB6F; }
         .jadegreen-layout-navmenu ul li a:hover {
           background: #00AB6F;
           color: #FFF800;
-          box-shadow: 0px, 10px, 20px, black, 0px, 6px, 6px, #252928; }
+          box-shadow: 0px 3px 6px black, 0px 3px 6px #252928; }
         .jadegreen-layout-navmenu ul li a:not(:only-child):after {
           padding-left: 4px;
           content: ' ▾'; }
@@ -184,14 +180,17 @@ html {
         paddding: 10px;
         line-height: 25px; }
 
-.jadegreen-layout-navcurrent {
+#jadegreen-layout-navcurrent {
   background: #00AB6F; }
 
 .jadegreen-layout-navdropdown {
   position: absolute;
   z-index: 1;
-  box-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, #252928;
+  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
+  background: #00AB6F;
   display: none; }
+  .jadegreen-layout-navdropdown a {
+    background-color: #00AB6F; }
 
 .jadegreen-layout-navmobile {
   display: none;
@@ -204,15 +203,15 @@ html {
 
 @media only screen and (max-width: 800px) {
   .jadegreen-layout-navmobile {
+    cursor: pointer;
+    cursor: hand;
     display: block; }
-    .jadegreen-layout-navmobile:hover {
-      background: #00AB6F; }
-      .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span,
-      .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span:before,
-      .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span:after {
-        background: #FFF800; }
-      .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle.active span {
-        background-color: transparent; }
+    .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span,
+    .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span:before,
+    .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle span:after {
+      background: #FFF800; }
+    .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle.active span {
+      background-color: transparent; }
   .jadegreen-layout-navmenu {
     width: 100%;
     padding: 0 0 15px; }
@@ -227,10 +226,12 @@ html {
         .jadegreen-layout-navmenu ul li ul li a {
           padding-left: 30px; }
   .jadegreen-layout-navdropdown {
-    position: static; } }
+    position: static;
+    background: #07754F;
+    box-shadow: 0px 1px 3px black, 0px 1px 2px #252928; } }
 
 @media screen and (min-width: 800px) {
-  .jadegreen-layout-navmenu li {
+  .jadegreen-layout-navmenu {
     display: block !important; } }
 
 #jadegreen-layout-navtoggle {
@@ -273,10 +274,14 @@ html {
   padding: 1em; }
 
 .jadegreen-layout-footer {
+  background-color: #07754F;
+  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1em;
   text-align: center; }
+  .jadegreen-layout-footer h3 {
+    color: white; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.

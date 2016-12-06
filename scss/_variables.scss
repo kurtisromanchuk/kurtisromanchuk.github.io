@@ -19,11 +19,11 @@ $primary-white: white;
    Shadows
    ========================================================================== */
 
-$very-low-shadow: 0px, 1px, 3px, black, 0px, 1px, 2px, $primary-darkgrey;
-$low-shadow: 0px, 3px, 6px, black, 0px, 3px, 6px, $primary-darkgrey;
-$low-shadow-active: 0px, 10px, 20px, black, 0px, 6px, 6px, $primary-darkgrey;
-$high-shadow: 0px, 14px, 28px, black, 0px, 10px, 10px, $primary-darkgrey;
-$high-shadow-active: 0px, 19px, 38px, black, 0px, 15px, 12px, $primary-darkgrey,;
+$low-shadow: 0px 1px 3px black, 0px 1px 2px $primary-darkgrey;
+$low-shadow-active: 0px 3px 6px black, 0px 3px 6px $primary-darkgrey;
+$high-shadow: 0px 10px 20px black, 0px 6px 6px $primary-darkgrey;
+$high-shadow-active: 0px 14px 28px black, 0px 10px 10px $primary-darkgrey;
+$high-shadow-very: 0px 19px 38px black, 0px 15px 12px $primary-darkgrey,;
 
 /* ==========================================================================
    Content Sizes
