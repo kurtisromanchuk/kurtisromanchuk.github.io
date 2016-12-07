@@ -72,7 +72,6 @@ html {
 		text-decoration: none;
 		&:hover {
 			color: $secondary-color;
-			box-shadow: $low-shadow;
 		}
 	}
 }
@@ -98,7 +97,6 @@ html {
 				&:hover {
 					background: $primary-light;
 					color: $secondary-color;
-					box-shadow: $low-shadow-active;
 				}
 				// Below targets menu items that have dropdown with them
 				&:not(:only-child):after {
@@ -191,9 +189,9 @@ html {
 }
 
 @media screen and (min-width: $breakpoint) {
-  .jadegreen-layout-navmenu {
-    display: block !important;
-  }
+    .jadegreen-layout-navlist {
+    	display: block !important;
+  	}
 }
 
 // Animated hamburger icon

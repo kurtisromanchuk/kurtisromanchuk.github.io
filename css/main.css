@@ -148,8 +148,7 @@ html {
     font-weight: bold;
     text-decoration: none; }
     .jadegreen-layout-navbrand a:hover {
-      color: #FFF800;
-      box-shadow: 0px 1px 3px black, 0px 1px 2px #252928; }
+      color: #FFF800; }
 
 .jadegreen-layout-navmenu {
   position: relative;
@@ -170,8 +169,7 @@ html {
         text-decoration: none; }
         .jadegreen-layout-navmenu ul li a:hover {
           background: #00AB6F;
-          color: #FFF800;
-          box-shadow: 0px 3px 6px black, 0px 3px 6px #252928; }
+          color: #FFF800; }
         .jadegreen-layout-navmenu ul li a:not(:only-child):after {
           padding-left: 4px;
           content: ' ▾'; }
@@ -231,7 +229,7 @@ html {
     box-shadow: 0px 1px 3px black, 0px 1px 2px #252928; } }
 
 @media screen and (min-width: 800px) {
-  .jadegreen-layout-navmenu {
+  .jadegreen-layout-navlist {
     display: block !important; } }
 
 #jadegreen-layout-navtoggle {
