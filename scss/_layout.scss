@@ -95,7 +95,7 @@ html {
 				line-height: $nav-height;
 				text-decoration: none;
 				&:hover {
-					background: $primary-light;
+					//background: $primary-light;
 					color: $secondary-color;
 				}
 				// Below targets menu items that have dropdown with them
@@ -250,7 +250,6 @@ html {
 .jadegreen-layout-footer {
 	background-color: $primary-color;
 	box-shadow: $low-shadow;
-	max-width: $content-width;
 	margin: 0 auto;
 	padding: 1em;
 	text-align: center;
