@@ -34,7 +34,7 @@ gulp.task('fileinclude', function() {
 			prefix: '@@',
 			basepath: '@file'
 		}))
-		.pipe(gulp.dest('html/assembled/'))
+		.pipe(gulp.dest('.'))
 });
 
 // Creates function to convert sass to css
@@ -63,6 +63,9 @@ gulp.task('browserSync', function(){
 
 // Creates a watch task to update saved files
 gulp.task('watch', function(){
+	//Automatically assemble html files
+	gulp.watch('html/*.html', ['fileinclude']);
+	gulp.watch('html/includes/*.html', ['fileinclude']);
 	// Automatically update scss files to css
 	gulp.watch('scss/**/*.scss', ['sass']);
 	// Reload browser whenever html, css, or js files change
