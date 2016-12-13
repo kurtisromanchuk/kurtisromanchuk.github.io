@@ -38,16 +38,14 @@
 
 // Navigational menu styling
 .jadegreen-layout-navmenu {
+	text-align: center;
 	ul {
 		list-style: none;
-		margin: 0;
 		padding: 0;
+		margin: 0 auto;
 		li {
-			float: left;
-			margin: 0 auto;
+			display: inline;
 			position: relative;
-			right: 0;
-			left: 0;
 			a {
 				background: $primary-white;
 				color: $primary-color;
@@ -57,22 +55,24 @@
 				height: $nav-height;
 				border-style: solid;
 				border-radius: ($nav-height)/2;
-				border-width: 2px;
+				border-width: 4px;
 				border-color: $primary-white;
-				font-size: 0.8em;
+				font-size: 0.75rem;
 				text-align: center;
 				margin: auto 4px;
 				box-shadow: $low-shadow;
 				text-decoration: none;
 				&:hover {
-					//background: $primary-light;
-					
 					border-color: $primary-color;
+					box-shadow: $low-shadow-active;
+					color: $secondary-color;
+					transition: border-color 0.5s ease,
+								box-shadow 0.5s ease,
+								color 0.3s ease;
 				}
 				// Below targets menu items that have dropdown with them
 				&:not(:only-child):after {
-					padding-left: 4px;
-					content: ' ▾';
+					content: '▾';
 				}
 			}
 		}
@@ -82,8 +82,7 @@
 // Colour the current page manu item differently
 #jadegreen-layout-navcurrent {
 	border-color: $primary-color;
-	background: $primary-color;
-	color: $primary-white;
+	box-shadow: $low-shadow-active;
 }
 
 // Dropdown meny styling
