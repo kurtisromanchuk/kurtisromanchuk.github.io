@@ -122,6 +122,6 @@ gulp.task('clean:docs', function(){
 
 // Creates a build task to run all tasks to optimize and/or copy files
 gulp.task('build', function(callback){
-	runSequence('clean:docs','sass',['useref','images','fonts'],callback);
+	runSequence('clean:docs','fileinclude','sass',['useref','images','fonts'],callback);
 	console.log('Building files');
 });
