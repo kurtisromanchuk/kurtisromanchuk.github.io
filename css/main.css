@@ -101,7 +101,7 @@ textarea {
    ========================================================================== */
 html {
   color: #3A3F3D;
-  background-color: #D5DDDA; }
+  background-color: white; }
 
 /* ==========================================================================
    Text Styling
@@ -110,10 +110,17 @@ html {
    Page Layout Framework (mobile first)
    ========================================================================== */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 100%; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+body {
+  position: relative;
+  padding-bottom: 6em;
+  margin: 0;
+  min-height: 100%; }
 
 .jadegreen-layout-pageheader {
   background: white;
@@ -126,10 +133,34 @@ html {
     width: auto;
     margin: 0 auto; }
 
-.jadegreen-layout-navbackground {
-  height: 50px;
-  background: #07754F;
+.jadegreen-layout-pagecontainer {
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 1em; }
+
+.jadegreen-layout-footer {
+  background-color: #07754F;
   box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center; }
+  .jadegreen-layout-footer h3 {
+    color: white; }
+
+/* Import navbar styles */
+/*! Jade Greeen SCSS Navigation Bar by Kurtis Romanchuk */
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.jadegreen-layout-navbackground {
+  height: 80px;
+  background: white;
   position: relative; }
 
 .jadegreen-layout-navcontainer {
@@ -139,52 +170,57 @@ html {
 .jadegreen-layout-navbrand {
   float: left; }
   .jadegreen-layout-navbrand a {
-    background: #07754F;
-    color: white;
+    background: white;
+    color: #07754F;
     display: inline-block;
     padding: 0 20px;
-    line-height: 50px;
+    line-height: 80px;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none; }
     .jadegreen-layout-navbrand a:hover {
       color: #FFF800; }
 
-.jadegreen-layout-navmenu {
-  position: relative;
-  float: right; }
-  .jadegreen-layout-navmenu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    .jadegreen-layout-navmenu ul li {
-      float: left;
-      position: relative; }
-      .jadegreen-layout-navmenu ul li a {
-        background: #07754F;
-        color: white;
-        display: inline-block;
-        padding: 0 20px;
-        line-height: 50px;
-        text-decoration: none; }
-        .jadegreen-layout-navmenu ul li a:hover {
-          color: #FFF800; }
-        .jadegreen-layout-navmenu ul li a:not(:only-child):after {
-          padding-left: 4px;
-          content: ' ▾'; }
-      .jadegreen-layout-navmenu ul li ul li a {
-        min-width: 180px;
-        paddding: 10px;
-        line-height: 25px; }
+.jadegreen-layout-navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .jadegreen-layout-navmenu ul li {
+    float: left;
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    left: 0; }
+    .jadegreen-layout-navmenu ul li a {
+      background: white;
+      color: #07754F;
+      display: inline-block;
+      padding: 25px 0 0 0;
+      width: 80px;
+      height: 80px;
+      border-style: solid;
+      border-radius: 40px;
+      border-width: 2px;
+      border-color: white;
+      font-size: 0.8em;
+      text-align: center;
+      margin: auto 4px;
+      box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
+      text-decoration: none; }
+      .jadegreen-layout-navmenu ul li a:hover {
+        border-color: #07754F; }
+      .jadegreen-layout-navmenu ul li a:not(:only-child):after {
+        padding-left: 4px;
+        content: ' ▾'; }
 
 #jadegreen-layout-navcurrent {
-  background: #00AB6F; }
+  border-color: #07754F;
+  background: #07754F;
+  color: white; }
 
 .jadegreen-layout-navdropdown {
   position: absolute;
   z-index: 1;
-  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
-  background: #00AB6F;
   display: none; }
   .jadegreen-layout-navdropdown a {
     background-color: #00AB6F; }
@@ -192,11 +228,11 @@ html {
 .jadegreen-layout-navmobile {
   display: none;
   position: absolute;
-  top: -50px;
+  top: 0;
   right: 0;
   background: #07754F;
-  height: 50px;
-  width: 50px; }
+  height: 80px;
+  width: 80px; }
 
 @media only screen and (max-width: 800px) {
   .jadegreen-layout-navmobile {
@@ -234,8 +270,8 @@ html {
 #jadegreen-layout-navtoggle {
   z-index: 1;
   position: absolute;
-  left: 7.5px;
-  top: 22.5px;
+  left: 22.5px;
+  top: 37.5px;
   cursor: pointer; }
   #jadegreen-layout-navtoggle span,
   #jadegreen-layout-navtoggle span:before,
@@ -263,21 +299,6 @@ html {
     #jadegreen-layout-navtoggle.active span:after {
       transform: rotate(-45deg);
       background: #FFF800; }
-
-.jadegreen-layout-pagecontainer {
-  background-color: white;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1em; }
-
-.jadegreen-layout-footer {
-  background-color: #07754F;
-  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
-  margin: 0 auto;
-  padding: 1em;
-  text-align: center; }
-  .jadegreen-layout-footer h3 {
-    color: white; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.

@@ -1,0 +1,203 @@
+/*! Jade Greeen SCSS Navigation Bar by Kurtis Romanchuk */
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+
+   // Background for the navigational bar
+.jadegreen-layout-navbackground {
+	height: $nav-height;
+	background: $primary-white;
+	//box-shadow: $low-shadow;
+	position: relative;
+}
+
+// Container for navigational bar
+.jadegreen-layout-navcontainer {
+	max-width: $content-width;
+	margin: 0 auto;
+}
+
+// Branding for navigational bar
+.jadegreen-layout-navbrand {
+	float: left;
+	a {
+		background: $primary-white;
+		color: $primary-color;
+		display: inline-block;
+		padding: 0 20px;
+		line-height: $nav-height;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-decoration: none;
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+}
+
+// Navigational menu styling
+.jadegreen-layout-navmenu {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			float: left;
+			margin: 0 auto;
+			position: relative;
+			right: 0;
+			left: 0;
+			a {
+				background: $primary-white;
+				color: $primary-color;
+				display: inline-block;
+				padding: 25px 0 0 0;
+				width: $nav-height;
+				height: $nav-height;
+				border-style: solid;
+				border-radius: ($nav-height)/2;
+				border-width: 2px;
+				border-color: $primary-white;
+				font-size: 0.8em;
+				text-align: center;
+				margin: auto 4px;
+				box-shadow: $low-shadow;
+				text-decoration: none;
+				&:hover {
+					//background: $primary-light;
+					
+					border-color: $primary-color;
+				}
+				// Below targets menu items that have dropdown with them
+				&:not(:only-child):after {
+					padding-left: 4px;
+					content: ' ▾';
+				}
+			}
+		}
+	}
+}
+
+// Colour the current page manu item differently
+#jadegreen-layout-navcurrent {
+	border-color: $primary-color;
+	background: $primary-color;
+	color: $primary-white;
+}
+
+// Dropdown meny styling
+.jadegreen-layout-navdropdown {
+	position: absolute;
+	z-index: 1;
+	a {
+		background-color: $primary-light;
+	}
+	display: none;
+}
+
+// Mobile navigation menu styling
+.jadegreen-layout-navmobile {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: $primary-color;
+	height: $nav-height;
+	width: $nav-height;
+}
+
+// Display mobile menu instead when screen becomes too narrow
+@media only screen and (max-width: $breakpoint) {
+	.jadegreen-layout-navmobile {
+		cursor: pointer; cursor: hand;
+		display: block;
+		&:hover {
+			#jadegreen-layout-navtoggle {
+				span,
+				span:before,
+				span:after {
+					background: $secondary-color;
+				}
+				&.active span {
+	  				background-color: transparent;
+	  			}
+			}
+		}
+	}
+
+	.jadegreen-layout-navmenu {
+    	width: 100%;
+	    padding: 0 0 15px;
+	    ul {
+	      	display: none;
+	      	li {
+	        	float: none;
+	        	a {
+	          		width: 100%;
+	          		padding: 15px;
+	          		line-height: 20px;
+	        	}
+	        	ul li a {
+	          		padding-left: 30px;
+	        	}
+	      	}
+	    }
+  	}
+
+  	.jadegreen-layout-navdropdown {
+    	position: static;
+    	background: $primary-color;
+    	box-shadow: $low-shadow;
+  	}
+}
+
+@media screen and (min-width: $breakpoint) {
+    .jadegreen-layout-navlist {
+    	display: block !important;
+  	}
+}
+
+// Animated hamburger icon
+#jadegreen-layout-navtoggle {
+	z-index: 1;
+	position: absolute;
+	left: (($nav-height) - 35)/2;
+  	top: (($nav-height) - 5)/2;
+	cursor: pointer;
+	span,
+	span:before,
+	span:after {
+	    cursor: pointer;
+	    border-radius: 1px;
+	    height: 5px;
+	    width: 35px;
+	    background: $primary-white;
+	    position: absolute;
+	    display: block;
+	    content: '';
+	    transition: all 300ms ease-in-out;
+	  }
+	span:before {
+	  	top: -10px;
+	}
+	span:after {
+	  	bottom: -10px;
+	}
+
+	&.active span {
+	  	background-color: transparent;
+	  	&:before,
+	   	&:after {
+	    	top: 0;
+	    }
+	    &:before {
+	    	transform: rotate(45deg);
+	    	background: $secondary-color;
+	    }
+	    &:after {
+	    	transform: rotate(-45deg);
+	    	background: $secondary-color;
+	    }
+	}
+}

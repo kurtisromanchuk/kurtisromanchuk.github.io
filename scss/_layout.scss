@@ -6,7 +6,7 @@
 
 html {
 	color: $primary-mediumgrey;
-	background-color: $primary-lightgrey;
+	background-color: $primary-white;
 }
 
 /* ==========================================================================
@@ -25,10 +25,18 @@ html {
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	padding-bottom: 6em;
+	margin: 0;
+	min-height: 100%;
 }
 
 .jadegreen-layout-pageheader {
@@ -44,205 +52,12 @@ html {
 	}
 }
 
-// Background for the navigational bar
-.jadegreen-layout-navbackground {
-	height: $nav-height;
-	background: $primary-color;
-	box-shadow: $low-shadow;
-	position: relative;
-}
-
-// Container for navigational bar
-.jadegreen-layout-navcontainer {
-	max-width: $content-width;
-	margin: 0 auto;
-}
-
-// Branding for navigational bar
-.jadegreen-layout-navbrand {
-	float: left;
-	a {
-		background: $primary-color;
-		color: $primary-white;
-		display: inline-block;
-		padding: 0 20px;
-		line-height: $nav-height;
-		text-transform: uppercase;
-		font-weight: bold;
-		text-decoration: none;
-		&:hover {
-			color: $secondary-color;
-		}
-	}
-}
-
-// Navigational menu styling
-.jadegreen-layout-navmenu {
-	position: relative;
-	float: right;
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		li {
-			float: left;
-			position: relative;
-			a {
-				background: $primary-color;
-				color: $primary-white;
-				display: inline-block;
-				padding: 0 20px;
-				line-height: $nav-height;
-				text-decoration: none;
-				&:hover {
-					//background: $primary-light;
-					color: $secondary-color;
-				}
-				// Below targets menu items that have dropdown with them
-				&:not(:only-child):after {
-					padding-left: 4px;
-					content: ' ▾';
-				}
-			}
-			ul li {
-				a {
-					min-width: 180px;
-					paddding: 10px;
-					line-height: $nav-height/2;
-				}
-			}
-		}
-	}
-}
-
-// Colour the current page manu item differently
-#jadegreen-layout-navcurrent {
-	background: $primary-light;
-}
-
-// Dropdown meny styling
-.jadegreen-layout-navdropdown {
-	position: absolute;
-	z-index: 1;
-	box-shadow: $low-shadow;
-	background: $primary-light;
-	a {
-		background-color: $primary-light;
-	}
-	display: none;
-}
-
-// Mobile navigation menu styling
-.jadegreen-layout-navmobile {
-	display: none;
-	position: absolute;
-	top: -$nav-height;
-	right: 0;
-	background: $primary-color;
-	height: $nav-height;
-	width: $nav-height;
-}
-
-// Display mobile menu instead when screen becomes too narrow
-@media only screen and (max-width: $breakpoint) {
-	.jadegreen-layout-navmobile {
-		cursor: pointer; cursor: hand;
-		display: block;
-		&:hover {
-			#jadegreen-layout-navtoggle {
-				span,
-				span:before,
-				span:after {
-					background: $secondary-color;
-				}
-				&.active span {
-	  				background-color: transparent;
-	  			}
-			}
-		}
-	}
-
-	.jadegreen-layout-navmenu {
-    	width: 100%;
-	    padding: 0 0 15px;
-	    ul {
-	      	display: none;
-	      	li {
-	        	float: none;
-	        	a {
-	          		width: 100%;
-	          		padding: 15px;
-	          		line-height: 20px;
-	        	}
-	        	ul li a {
-	          		padding-left: 30px;
-	        	}
-	      	}
-	    }
-  	}
-
-  	.jadegreen-layout-navdropdown {
-    	position: static;
-    	background: $primary-color;
-    	box-shadow: $low-shadow;
-  	}
-}
-
-@media screen and (min-width: $breakpoint) {
-    .jadegreen-layout-navlist {
-    	display: block !important;
-  	}
-}
-
-// Animated hamburger icon
-#jadegreen-layout-navtoggle {
-	z-index: 1;
-	position: absolute;
-	left: (($nav-height) - 35)/2;
-  	top: (($nav-height) - 5)/2;
-	cursor: pointer;
-	span,
-	span:before,
-	span:after {
-	    cursor: pointer;
-	    border-radius: 1px;
-	    height: 5px;
-	    width: 35px;
-	    background: $primary-white;
-	    position: absolute;
-	    display: block;
-	    content: '';
-	    transition: all 300ms ease-in-out;
-	  }
-	span:before {
-	  	top: -10px;
-	}
-	span:after {
-	  	bottom: -10px;
-	}
-
-	&.active span {
-	  	background-color: transparent;
-	  	&:before,
-	   	&:after {
-	    	top: 0;
-	    }
-	    &:before {
-	    	transform: rotate(45deg);
-	    	background: $secondary-color;
-	    }
-	    &:after {
-	    	transform: rotate(-45deg);
-	    	background: $secondary-color;
-	    }
-	}
-}
-
 // Page container styling
 .jadegreen-layout-pagecontainer {
 	background-color: $primary-white;
 	max-width: $content-width;
 	margin: 0 auto;
+	min-height: 100%;
 	padding: 1em;
 }
 
@@ -250,6 +65,10 @@ html {
 .jadegreen-layout-footer {
 	background-color: $primary-color;
 	box-shadow: $low-shadow;
+	position: absolute;
+ 	right: 0;
+ 	bottom: 0;
+ 	left: 0;
 	margin: 0 auto;
 	padding: 1em;
 	text-align: center;

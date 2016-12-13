@@ -1,5 +1,6 @@
 // Kurtis Romanchuk gulpfile.js created mostly with help from https://css-tricks.com/gulp-for-beginners/
 
+'use-strict';
 // Requires gulp
 var gulp = require('gulp');
 // Requires the gulp sass plugin
@@ -23,7 +24,18 @@ var del = require('del');
 var runSequence = require('run-sequence');
 // Requires the gulp autoprefixer plugin
 var autoprefixer = require('gulp-autoprefixer');
+// Requires the gulp file includer
+var fileinclude = require('gulp-file-include');
 
+// Creates function to include files
+gulp.task('fileinclude', function() {
+	gulp.src(['./html/*.html'])
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file'
+		}))
+		.pipe(gulp.dest('html/assembled/'))
+});
 
 // Creates function to convert sass to css
 gulp.task('sass', function(){
