@@ -34,3 +34,16 @@ $high-shadow-very: 0px 19px 38px black, 0px 15px 12px $primary-darkgrey,;
    $pageheader-height: 200px;
    $nav-height: 80px;
    $nav-buttonmargin: 4px;
+
+
+/* ==========================================================================
+   Font Style Mixins
+   ========================================================================== */
+
+   $font-base: 'Petit Formal Script', cursive;
+   $font-accent: 'Petit Formal Script', cursive;
+
+   @mixin button-font() {
+      font-family: $font-accent;
+      font-weight: bold;
+   }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -94,6 +93,9 @@ textarea {
 /* ==========================================================================
    Content Sizes
    ========================================================================== */
+/* ==========================================================================
+   Font Style Mixins
+   ========================================================================== */
 /* Import layout styles */
 /*! Jade Greeen SCSS Layout File by Kurtis Romanchuk */
 /* ==========================================================================
@@ -141,8 +143,7 @@ body {
   padding: 1em; }
 
 .jadegreen-layout-footer {
-  background-color: #07754F;
-  box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
+  background-color: white;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -151,7 +152,7 @@ body {
   padding: 1em;
   text-align: center; }
   .jadegreen-layout-footer h3 {
-    color: white; }
+    color: #07754F; }
 
 /* Import navbar styles */
 /*! Jade Greeen SCSS Navigation Bar by Kurtis Romanchuk */
@@ -196,14 +197,16 @@ body {
       margin: auto 4px;
       box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
       text-decoration: none;
-      text-align: center; }
+      text-align: center;
+      font-family: "Petit Formal Script", cursive;
+      font-weight: bold; }
       .jadegreen-layout-navlist li a:hover {
         border-color: #07754F;
         box-shadow: 0px 3px 6px black, 0px 3px 6px #252928;
         color: #CAB11F;
         transition: border-color 0.5s ease, box-shadow 0.5s ease, color 0.4s ease; }
-      .jadegreen-layout-navlist li a:not(:only-child):after {
-        content: '▾'; }
+      .jadegreen-layout-navlist li a:not(:only-child):after:hover jadegreen-layout-navdropdown {
+        display: block; }
 
 .jadegreen-layout-navdropdown {
   position: absolute;
@@ -258,10 +261,6 @@ body {
 @media screen and (min-width: 752px) {
   .jadegreen-layout-navlist {
     display: block !important; } }
-
-@media only screen and (orientation: landscape) {
-  .jadegreen-layout-pageheader {
-    display: none; } }
 
 #jadegreen-layout-navtoggle {
   z-index: 1;

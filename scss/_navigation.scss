@@ -53,6 +53,7 @@
 			box-shadow: $low-shadow;
 			text-decoration: none;
 			text-align: center;
+			@include button-font();
 			&:hover {
 				border-color: $primary-color;
 				box-shadow: $low-shadow-active;
@@ -63,7 +64,12 @@
 			}
 			// Below targets menu items that have dropdown with them
 			&:not(:only-child):after {
-				content: '▾';
+				//content: '▾';
+				&:hover {
+					jadegreen-layout-navdropdown {
+						display: block;
+					}
+				}
 			}
 		}
 	}
@@ -151,13 +157,6 @@
     .jadegreen-layout-navlist {
     	display: block !important;
   	}
-}
-
-// Hide header on landscape orientation
-@media only screen and (orientation: landscape) {
-	.jadegreen-layout-pageheader {
-		display: none;
-	}
 }
 
 // Animated hamburger icon
