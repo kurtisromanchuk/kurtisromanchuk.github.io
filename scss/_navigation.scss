@@ -21,19 +21,10 @@
 // Branding for navigational bar
 .jadegreen-layout-navbrand {
 	float: left;
-	a {
-		background: $primary-white;
-		color: $primary-color;
-		display: inline-block;
-		padding: 0 20px;
-		line-height: $nav-height;
-		text-transform: uppercase;
-		font-weight: bold;
-		text-decoration: none;
-		&:hover {
-			color: $secondary-color;
-		}
+	img {
+		max-height: 94px;
 	}
+	display: none;
 }
 
 // Navigational menu styling
@@ -112,6 +103,14 @@
 
 // Display mobile menu instead when screen becomes too narrow
 @media only screen and (max-width: $breakpoint) {
+	.jadegreen-layout-pageheader {
+		display: none;
+	}
+
+	.jadegreen-layout-navbrand {
+		display: block;
+	}
+
 	.jadegreen-layout-navmobile {
 		cursor: pointer; cursor: hand;
 		display: block;
@@ -140,7 +139,7 @@
 	    		margin: $nav-buttonmargin;
 	    	}
 	    }
-	    //display: none;
+	    display: none;
   	}
 
   	.jadegreen-layout-navdropdown {
@@ -152,6 +151,13 @@
     .jadegreen-layout-navlist {
     	display: block !important;
   	}
+}
+
+// Hide header on landscape orientation
+@media only screen and (orientation: landscape) {
+	.jadegreen-layout-pageheader {
+		display: none;
+	}
 }
 
 // Animated hamburger icon
