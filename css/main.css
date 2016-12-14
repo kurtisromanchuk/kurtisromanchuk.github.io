@@ -222,14 +222,13 @@ body {
   z-index: 1;
   display: none; }
   .jadegreen-layout-navdropdown li a {
-    margin: 4px 4px; }
+    margin: 4px; }
 
 .jadegreen-layout-navmobile {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #07754F;
+  position: relative;
+  float: right;
+  background: white;
   height: 80px;
   width: 80px; }
 
@@ -248,23 +247,16 @@ body {
       background: #CAB11F; }
     .jadegreen-layout-navmobile:hover #jadegreen-layout-navtoggle.active span {
       background-color: transparent; }
-  .jadegreen-layout-navmenu {
-    width: 100%;
-    padding: 0 0 15px; }
-    .jadegreen-layout-navmenu ul {
-      display: none; }
-      .jadegreen-layout-navmenu ul li {
-        float: none; }
-        .jadegreen-layout-navmenu ul li a {
-          width: 100%;
-          padding: 15px;
-          line-height: 20px; }
-        .jadegreen-layout-navmenu ul li ul li a {
-          padding-left: 30px; }
+  .jadegreen-layout-navlist {
+    width: 80px;
+    float: right;
+    position: absolute;
+    top: 80px;
+    right: 10px; }
+    .jadegreen-layout-navlist li a {
+      margin: 4px; }
   .jadegreen-layout-navdropdown {
-    position: static;
-    background: #07754F;
-    box-shadow: 0px 1px 3px black, 0px 1px 2px #252928; } }
+    position: static; } }
 
 @media screen and (min-width: 752px) {
   .jadegreen-layout-navlist {
@@ -273,7 +265,7 @@ body {
 #jadegreen-layout-navtoggle {
   z-index: 1;
   position: absolute;
-  left: 22.5px;
+  left: 16.5px;
   top: 37.5px;
   cursor: pointer; }
   #jadegreen-layout-navtoggle span,
@@ -283,7 +275,7 @@ body {
     border-radius: 1px;
     height: 5px;
     width: 35px;
-    background: white;
+    background: #07754F;
     position: absolute;
     display: block;
     content: '';

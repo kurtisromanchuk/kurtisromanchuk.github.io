@@ -88,7 +88,7 @@
 	z-index: 1;
 	li {
 		a {
-			margin: ($nav-buttonmargin) $nav-buttonmargin;
+			margin: $nav-buttonmargin;
 		}
 	}
 	display: none;
@@ -97,10 +97,9 @@
 // Mobile navigation menu styling
 .jadegreen-layout-navmobile {
 	display: none;
-	position: absolute;
-	top: 0;
-	right: 0;
-	background: $primary-color;
+	position: relative;
+	float: right;
+	background: $primary-white;
 	height: $nav-height;
 	width: $nav-height;
 }
@@ -130,29 +129,22 @@
 		}
 	}
 
-	.jadegreen-layout-navmenu {
-    	width: 100%;
-	    padding: 0 0 15px;
-	    ul {
-	      	display: none;
-	      	li {
-	        	float: none;
-	        	a {
-	          		width: 100%;
-	          		padding: 15px;
-	          		line-height: 20px;
-	        	}
-	        	ul li a {
-	          		padding-left: 30px;
-	        	}
-	      	}
+	.jadegreen-layout-navlist {
+	    width: $nav-height;
+	    float: right;
+	    position: absolute;
+	    top: $nav-height;
+	    right: 10px;
+	    li {
+	    	a {
+	    		margin: $nav-buttonmargin;
+	    	}
 	    }
+	    //display: none;
   	}
 
   	.jadegreen-layout-navdropdown {
     	position: static;
-    	background: $primary-color;
-    	box-shadow: $low-shadow;
   	}
 }
 
@@ -166,7 +158,7 @@
 #jadegreen-layout-navtoggle {
 	z-index: 1;
 	position: absolute;
-	left: (($nav-height) - 35)/2;
+	left: (($nav-height) - 35)/2-6;
   	top: (($nav-height) - 5)/2;
 	cursor: pointer;
 	span,
@@ -176,7 +168,7 @@
 	    border-radius: 1px;
 	    height: 5px;
 	    width: 35px;
-	    background: $primary-white;
+	    background: $primary-color;
 	    position: absolute;
 	    display: block;
 	    content: '';
