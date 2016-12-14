@@ -65,14 +65,16 @@
 			// Below targets menu items that have dropdown with them
 			&:not(:only-child):after {
 				//content: '▾';
-				&:hover {
-					jadegreen-layout-navdropdown {
-						display: block;
-					}
-				}
 			}
 		}
 	}
+}
+
+.jadegreen-layout-navdroplink {
+	&:hover .jadegreen-layout-navdropdown {
+		display: block !important;
+	}
+	
 }
 
 // Dropdown menu styling
@@ -95,6 +97,7 @@
 .jadegreen-layout-navmobile {
 	display: none;
 	position: relative;
+	z-index: 1;
 	float: right;
 	background: $primary-white;
 	height: $nav-height;
@@ -138,6 +141,7 @@
 	    width: $nav-height;
 	    float: right;
 	    position: absolute;
+	    z-index: 1;
 	    top: $nav-height;
 	    right: 10px;
 	    li {
