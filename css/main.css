@@ -81,9 +81,8 @@ textarea {
 /*! Jade Greeen SCSS Variables File by Kurtis Romanchuk */
 /* ==========================================================================
    Colours
-   Based on 198 on paletton.com base hex 00AB6F
-   Complimentary yellow at 90 degrees
    ========================================================================== */
+/* our jade green */
 /* our jade green */
 /* lighter jade green for activated states */
 /* our gold */
@@ -96,13 +95,16 @@ textarea {
 /* ==========================================================================
    Font Style Mixins
    ========================================================================== */
+/* ==========================================================================
+   Style Mixins
+   ========================================================================== */
 /* Import layout styles */
 /*! Jade Greeen SCSS Layout File by Kurtis Romanchuk */
 /* ==========================================================================
    Page Colouring
    ========================================================================== */
 html {
-  color: #3A3F3D;
+  color: #353832;
   background-color: white; }
 
 /* ==========================================================================
@@ -137,10 +139,14 @@ body {
 
 .jadegreen-layout-pagecontainer {
   background-color: white;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 25px auto;
   min-height: 100%;
-  padding: 1em; }
+  padding: 1em;
+  border-style: solid;
+  border-radius: 40px;
+  border-width: 4px;
+  border-color: #618832; }
 
 .jadegreen-layout-footer {
   background-color: white;
@@ -152,7 +158,7 @@ body {
   padding: 1em;
   text-align: center; }
   .jadegreen-layout-footer h3 {
-    color: #07754F; }
+    color: #618832; }
 
 /* Import navbar styles */
 /*! Jade Greeen SCSS Navigation Bar by Kurtis Romanchuk */
@@ -165,7 +171,7 @@ body {
   position: relative; }
 
 .jadegreen-layout-navcontainer {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto; }
 
 .jadegreen-layout-navbrand {
@@ -184,30 +190,30 @@ body {
     position: relative; }
     .jadegreen-layout-navlist li a {
       background: white;
-      color: #07754F;
+      color: #618832;
       display: inline-block;
       padding-top: 25px;
       width: 80px;
       height: 80px;
+      font-size: 0.75rem;
+      margin: auto 4px;
+      box-shadow: 0px 1px 3px black, 0px 1px 2px #353832;
+      text-decoration: none;
+      text-align: center;
       border-style: solid;
       border-radius: 40px;
       border-width: 4px;
       border-color: white;
-      font-size: 0.75rem;
-      margin: auto 4px;
-      box-shadow: 0px 1px 3px black, 0px 1px 2px #252928;
-      text-decoration: none;
-      text-align: center;
       font-family: "Petit Formal Script", cursive;
       font-weight: bold; }
       .jadegreen-layout-navlist li a:hover {
-        border-color: #07754F;
-        box-shadow: 0px 3px 6px black, 0px 3px 6px #252928;
+        border-color: #618832;
+        box-shadow: 0px 3px 6px black, 0px 3px 6px #353832;
         color: #CAB11F;
         transition: border-color 0.5s ease, box-shadow 0.5s ease, color 0.4s ease; }
 
 .jadegreen-layout-navdroplink:hover .jadegreen-layout-navdropdown {
-  display: block !important; }
+  display: block; }
 
 .jadegreen-layout-navdropdown {
   position: absolute;
@@ -230,8 +236,8 @@ body {
   width: 80px; }
 
 #jadegreen-layout-navcurrent {
-  border-color: #07754F;
-  box-shadow: 0px 3px 6px black, 0px 3px 6px #252928; }
+  border-color: #618832;
+  box-shadow: 0px 3px 6px black, 0px 3px 6px #353832; }
 
 @media only screen and (max-width: 752px) {
   .jadegreen-layout-pageheader {
@@ -278,7 +284,7 @@ body {
     border-radius: 1px;
     height: 5px;
     width: 35px;
-    background: #07754F;
+    background: #618832;
     position: absolute;
     display: block;
     content: '';

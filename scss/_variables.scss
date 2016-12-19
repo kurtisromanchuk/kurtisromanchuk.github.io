@@ -2,17 +2,15 @@
 
 /* ==========================================================================
    Colours
-   Based on 198 on paletton.com base hex 00AB6F
-   Complimentary yellow at 90 degrees
    ========================================================================== */
 
-$primary-color: #07754F; /* our jade green */
-$primary-light: #00AB6F; /* lighter jade green for activated states */
+$primary-color: #618832; /* our jade green */
+$primary-color: #618832; /* our jade green */
+$primary-light: #7FA550; /* lighter jade green for activated states */
 $secondary-color: #CAB11F; /* our gold */
-$primary-lightgrey: #D5DDDA;
-$primary-mediumgrey: #3A3F3D;
-$primary-darkgrey: #252928;
-// $primary-white: #E2FBF2;
+$primary-lightgrey: #F2F6ED;
+$primary-mediumgrey: #BBC0B5;
+$primary-darkgrey: #353832;
 $primary-white: white;
 
 /* ==========================================================================
@@ -29,12 +27,11 @@ $high-shadow-very: 0px 19px 38px black, 0px 15px 12px $primary-darkgrey,;
    Content Sizes
    ========================================================================== */
 
-   $content-width: 1200px;
+   $content-width: 1000px;
    $breakpoint: 752px;
    $pageheader-height: 200px;
    $nav-height: 80px;
    $nav-buttonmargin: 4px;
-
 
 /* ==========================================================================
    Font Style Mixins
@@ -47,3 +44,14 @@ $high-shadow-very: 0px 19px 38px black, 0px 15px 12px $primary-darkgrey,;
       font-family: $font-accent;
       font-weight: bold;
    }
+
+/* ==========================================================================
+   Style Mixins
+   ========================================================================== */
+
+@mixin jadegreen-border($color) {
+      border-style: solid;
+      border-radius: ($nav-height)/2;
+      border-width: 4px;
+      border-color: $color;
+}

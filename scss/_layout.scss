@@ -5,7 +5,7 @@
    ========================================================================== */
 
 html {
-	color: $primary-mediumgrey;
+	color: $primary-darkgrey;
 	background-color: $primary-white;
 }
 
@@ -57,9 +57,10 @@ body {
 .jadegreen-layout-pagecontainer {
 	background-color: $primary-white;
 	max-width: $content-width;
-	margin: 0 auto;
+	margin: 25px auto;
 	min-height: 100%;
 	padding: 1em;
+	@include jadegreen-border($primary-color);
 }
 
 // Page footer styling

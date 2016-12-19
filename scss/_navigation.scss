@@ -44,15 +44,12 @@
 			padding-top: 25px;
 			width: $nav-height;
 			height: $nav-height;
-			border-style: solid;
-			border-radius: ($nav-height)/2;
-			border-width: 4px;
-			border-color: $primary-white;
 			font-size: 0.75rem;
 			margin: auto $nav-buttonmargin;
 			box-shadow: $low-shadow;
 			text-decoration: none;
 			text-align: center;
+			@include jadegreen-border($primary-white);
 			@include button-font();
 			&:hover {
 				border-color: $primary-color;
@@ -71,8 +68,10 @@
 }
 
 .jadegreen-layout-navdroplink {
-	&:hover .jadegreen-layout-navdropdown {
-		display: block !important;
+	&:hover {
+		.jadegreen-layout-navdropdown {
+			display: block;
+		}
 	}
 	
 }
