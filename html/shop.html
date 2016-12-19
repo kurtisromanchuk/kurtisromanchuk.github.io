@@ -2,24 +2,20 @@
 <html class="no-js" lang="">
 
     <!-- include html head -->
-    @@include('_head.html', {
+    @@include('includes/_head.html', {
         "title":"Shop"
     })
 
     <body>
 
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <!-- include internet explorer 8 upgrade message section -->
+        @@include('includes/_ie8warning.html')
 
-        <div class="jadegreen-layout-pageheader">
-            <header>
-                <img src="img/jadegreencirclelogo.jpg" />
-            </header>
-        </div> <!-- #jadegreen-layout-pageheader -->
+        <!-- include header section -->
+        @@include('includes/_header.html')
 
         <!-- include navigation section -->
-        @@include('_navigation.html')
+        @@include('includes/_navigation.html')
 
         <section class="mainpage">
             <div class="jadegreen-layout-pagecontainer">
@@ -34,23 +30,11 @@
             </div> <!-- #jadegreen-layout-pagecontainer -->
         </section> <!-- #mainpage -->
 
-        <section class="footer">
-            <div class="jadegreen-layout-footer">
-                <footer>
-                    <h3>Check back soon for future updates!</h3>
-                </footer>
-            </div> <!-- #jadegreen-layout-footer -->
-        </section> <!-- #footer -->
+        <!-- include footer section -->
+        @@include('includes/_footer.html')
 
-		<!-- load hosted JQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        
-        <!-- build:js js/main.min.js -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/navbar.js"></script>
-        <!-- endbuild -->
+		<!-- include javascripts -->
+        @@include('includes/_scripts.html')
 
         <!--
 		I haven't set this up yet.

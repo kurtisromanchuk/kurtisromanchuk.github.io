@@ -23,57 +23,60 @@
 
     <body>
 
+        <!-- include internet explorer 8 upgrade message section -->
         <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-        <div class="jadegreen-layout-pageheader">
-            <header>
-                <img src="img/jadegreencirclelogo.jpg" />
-            </header>
-        </div> <!-- #jadegreen-layout-pageheader -->
+        <!-- include header section -->
+        <section class="header">
+	<div class="jadegreen-layout-pageheader">
+	    <header>
+	        <img src="img/jadegreencirclelogo.jpg" />
+	    </header>
+	</div> <!-- #jadegreen-layout-pageheader -->
+</section> <!-- #header -->
+
 
         <!-- include navigation section -->
         <section class="navigation">
-	        <div class="jadegreen-layout-navbackground">
+    <div class="jadegreen-layout-navbackground">
+	    <div class="jadegreen-layout-navcontainer">
 
-		        <div class="jadegreen-layout-navcontainer">
+        	<div class="jadegreen-layout-navbrand">
+        		<a href="index.html"><img src="img/jadegreencirclelogo.jpg" /></a>
+        	</div> <!-- #jadegreen-layout-navbrand -->
 
-		        	<div class="jadegreen-layout-navbrand">
-		        		<a href="index.html"><img src="img/jadegreencirclelogo.jpg" /></a>
-		        	</div> <!-- #jadegreen-layout-navbrand -->
-
-			        <div class="jadegreen-layout-navmenu">
-		    	        <nav>
-		    	        	<div class="jadegreen-layout-navmobile">
-		    	        		<a id="jadegreen-layout-navtoggle" href="#!">
-		    	        			<span></span>
-		    	        		</a> <!-- #jadegreen-layout-navtoggle -->
-		    	        	</div> <!-- #jadegreen-layout-navmobile -->
-		        	        <ul class="jadegreen-layout-navlist">
-		            	        <li><a href="index.html">home</a></li>
-		                	    <li><a href="about.html">about</a></li>
-		                    	<li>
-		                        	<a class="jadegreen-layout-navdroplink" href="#" >terrariums</a>
-			                        <ul class="jadegreen-layout-navdropdown">
-		    	                    	<li><a href="terrariums.html">about</a></li>
-		        	                    <li><a href="terrariums.html#collections">collections</a></li>
-		            	                <li><a href="customdesign.html">custom</a></li>
-		                	        </ul> <!-- #jadegreen-layout-navdropdown -->
-			                    </li>
-			                    <li><a href="gogreen.html">go green</a></li>
-			                    <li><a href="blog.html">blog</a></li>
-			                    <li><a href="shop.html">shop</a></li>
-			                    <li><a href="contact.html">contact</a></li>
-			                    <li><a href="styles.html">styles</a></li>
-			                </ul>
-			            </nav>
-			        </div> <!-- #jadegreen-layout-navmenu -->
-
-			    </div> <!-- #jadegreen-layout-navcontainer -->
-
-			</div> <!-- #jadegreen-layout-navbackground -->
-		</section> <!-- #navigation --> 
+	        <div class="jadegreen-layout-navmenu">
+    	        <nav>
+    	        	<div class="jadegreen-layout-navmobile">
+    	        		<a id="jadegreen-layout-navtoggle" href="#!">
+    	        			<span></span>
+    	        		</a> <!-- #jadegreen-layout-navtoggle -->
+    	        	</div> <!-- #jadegreen-layout-navmobile -->
+        	        <ul class="jadegreen-layout-navlist">
+            	        <li><a href="index.html">home</a></li>
+                	    <li><a href="about.html">about</a></li>
+                    	<li>
+                        	<a class="jadegreen-layout-navdroplink" href="#" >terrariums</a>
+	                        <ul class="jadegreen-layout-navdropdown">
+    	                    	<li><a href="terrariums.html">about</a></li>
+        	                    <li><a href="terrariums.html#collections">collections</a></li>
+            	                <li><a href="customdesign.html">custom</a></li>
+                	        </ul> <!-- #jadegreen-layout-navdropdown -->
+	                    </li>
+	                    <li><a href="gogreen.html">go green</a></li>
+	                    <li><a href="blog.html">blog</a></li>
+	                    <li><a href="shop.html">shop</a></li>
+	                    <li><a href="contact.html">contact</a></li>
+	                    <li><a href="styles.html">styles</a></li>
+	                </ul>
+	            </nav>
+	        </div> <!-- #jadegreen-layout-navmenu -->
+	        
+	    </div> <!-- #jadegreen-layout-navcontainer -->
+	</div> <!-- #jadegreen-layout-navbackground -->
+</section> <!-- #navigation -->
 
         <section class="mainpage">
             <div class="jadegreen-layout-pagecontainer">
@@ -88,23 +91,25 @@
             </div> <!-- #jadegreen-layout-pagecontainer -->
         </section> <!-- #mainpage -->
 
+        <!-- include footer section -->
         <section class="footer">
-            <div class="jadegreen-layout-footer">
-                <footer>
-                    <h3>Check back soon for future updates!</h3>
-                </footer>
-            </div> <!-- #jadegreen-layout-footer -->
-        </section> <!-- #footer -->
+    <div class="jadegreen-layout-footer">
+        <footer>
+            <h3>Check back soon for future updates!</h3>
+        </footer>
+    </div> <!-- #jadegreen-layout-footer -->
+</section> <!-- #footer -->
 
-		<!-- load hosted JQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <!-- include javascripts -->
+        <!-- load hosted JQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         
-        <!-- build:js js/main.min.js -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/navbar.js"></script>
-        <!-- endbuild -->
+<!-- build:js js/main.min.js -->
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navbar.js"></script>
+<!-- endbuild -->
 
         <!--
 		I haven't set this up yet.
